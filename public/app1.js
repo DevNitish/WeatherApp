@@ -1,9 +1,11 @@
-var weatherApp= angular.module('weatherApp',['ngMaterial']);
-weatherApp.controller('weatherAppCtrl',['$scope','$filter','$log','$http','$rootScope','$window','$location','$timeout','$q', function($scope,$filter,$log,$http,$rootScope,$window,$location,$timeout,$q){
+var weatherApp= angular.module('weatherApp',['ngMaterial','ui.router','ngMessages','angularMoment']);
+weatherApp.controller('weatherAppCtrl',['$scope','$filter','$log','$http','$rootScope','$window','$location','$timeout','$q','moment', function($scope,$filter,$log,$http,$rootScope,$window,$location,$timeout,$q,moment){
 
 	$scope.nit="nitish";
+ 
 
-	$scope.weather={
+ 
+	$scope.weathertest={
   "city": {
     "id": 1273294,
     "name": "Delhi",
@@ -1143,4 +1145,24 @@ weatherApp.controller('weatherAppCtrl',['$scope','$filter','$log','$http','$root
     }
   ]
 };
+  $scope.nextMonday = new moment().format('ddd Do MMM ');
+   $scope.tempDate=[];
+   $scope.tempShowDate=[];
+     $scope.showWeather=function(){
+        var j=0;
+        for (var i = $scope.weathertest.list.length - 1; i >= 0; i--) {
+          if($scope.tempDate[j-1]===$scope.weathertest.list[i].dt_txt.substring(0,10)){
+
+          }else{
+          $scope.tempDate.push($scope.weathertest.list[i].dt_txt.substring(0,10));
+          $scope.tempShowDate.push(moment($scope.weathertest.list[i].dt_txt.substring(0,10)).format('ddd, Do MMM'));
+          j++;
+          }
+        };
+          $scope.dates=$scope.tempDate.reverse();
+          $scope.showDate=$scope.tempShowDate.reverse();
+              console.log("the 6",$scope.showDate);  
+
+    };
+
 }]);

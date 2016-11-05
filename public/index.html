@@ -28,7 +28,7 @@
 		         
 		        </md-card-title>
 		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button >Show Forecast</md-button>
+		          <md-button ng-click="showWeather()">Show Forecast</md-button>
 		        </md-card-actions>
 		      </md-card>
 			</div>	
@@ -74,29 +74,7 @@
 		      </md-card>
 			</div>	
 			</div>	
-
-
-		
-	<md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="one">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-        </md-content>
-      </md-tab>
-        <md-tab label="two">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-        </md-content>
-      </md-tab>
-        <md-tab label="three">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-        </md-content>
-      </md-tab>
-  	</md-tabs>
+			<myweather weather="weathertest"></myweather>
 
 
 	</div>	
@@ -125,7 +103,7 @@
 	<script src="/lib/script/angular-moment.js"></script>
 
 	<script src="/app1.js"></script>
-	<!-- for socket  -->
+	<script src="/components/weatherCtrl.js" ></script>
 
 	<!-- personal js files -->
 </body>
