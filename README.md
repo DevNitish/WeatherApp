@@ -5,7 +5,7 @@ This application show 5 days forcast of four major city of India.
 
 * Node v6.2.x
 
-####To run the application:a
+####To run the application
 
-* Run npm install 
-* Then npm start
+* Run `npm install` 
+* Then `npm start`
