@@ -2,9 +2,9 @@ weatherApp.config(function($stateProvider,$urlRouterProvider){
 
 	$stateProvider
 
-	.state('wearther',{
-		 url: '/wearther',
-		templateUrl: 'components/wearther/ttHeadDashboard.html',
+	.state('delhi',{
+		 url: '/delhi',
+		templateUrl: 'components/delhi/ttHeadDashboard.html',
       	controller: 'ttheadCtrl',
       	resolve:{
 			newsList:function($http){

@@ -1,11 +1,39 @@
 <div>
 	<md-toolbar>{{$ctrl.weather.city.name}}</md-toolbar>
-      jkhkj  
-      {{showDate[3]}}
-      <ul>
-         <li ng-repeat="s in showDate">sass{{s}}</li>
-       </ul>
+      <div class="row">
+          
+        <md-button class="md-raised" ng-repeat="s in tempShowDate" ng-click="showWeather(s)">{{s}} </md-button>
+      </div>
+      
+      <div ng-if="weather" class="row">
+       <!-- <md-card ng-repeat="list in weather">
+        <md-card-title>
+          <md-card-title-text>
+            <h1 class="md-headline">{{list.weather.description}}</h1>
+            <span class="md-subhead">Date and time{{list.dt_txt}}</span>
+            <p>Temp: {{list.main.temp}}</p>
+            <p>Humidity:{{list.main.humidity}}</p>
+            <p>Wind Speed{{list.wind.speed}}</p>
+          </md-card-title-text>
+          
+        </md-card-title>
+      </md-card>  -->
   
-        
-  
+      <md-list class="md-dense" flex>
+        <div ng-repeat="list in weather">
+        <md-subheader class="md-no-sticky">{{list.dt_txt}}: {{list.weather[0].description}} </md-subheader>
+        <md-list-item class="md-3-line" >
+          <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Temp: {{list.main.temp}}</h3>
+            <h4>Humidity: {{list.main.humidity}}</h4>
+            <p>Wind Speed: {{list.wind.speed}}</p>
+          </div>
+        </md-list-item>
+        <md-divider ></md-divider>
+        </div>
+      </md-list>
+
+
+    </div>
 </div>

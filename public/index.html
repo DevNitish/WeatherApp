@@ -28,7 +28,7 @@
 		         
 		        </md-card-title>
 		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button ng-click="showWeather()">Show Forecast</md-button>
+		          <md-button ng-click="showWeather('Delhi')">Show Forecast</md-button>
 		        </md-card-actions>
 		      </md-card>
 			</div>	
@@ -42,7 +42,7 @@
 		         
 		        </md-card-title>
 		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button >Show Forecast</md-button>
+		          <md-button ng-click="showWeather('Bengaluru')" >Show Forecast</md-button>
 		        </md-card-actions>
 		      </md-card>
 			</div>		
@@ -56,7 +56,7 @@
 		         
 		        </md-card-title>
 		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button >Show Forecast</md-button>
+		          <md-button ng-click="showWeather('Chennai')" >Show Forecast</md-button>
 		        </md-card-actions>
 		      </md-card>
 			</div>				<div class="col-md-3">
@@ -69,12 +69,12 @@
 		         
 		        </md-card-title>
 		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button >Show Forecast</md-button>
+		          <md-button ng-click="showWeather('Kolkata')" >Show Forecast</md-button>
 		        </md-card-actions>
 		      </md-card>
 			</div>	
 			</div>	
-			<myweather weather="weathertest"></myweather>
+			<myweather weather="weatherDetails"></myweather>
 
 
 	</div>	
