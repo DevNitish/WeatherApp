@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/getweather',function(req,res,next){
-   		
+   		console.log("Hit Server ",req.body.city);
 		var options = { method: 'GET',
 		  url: 'http://api.openweathermap.org/data/2.5/forecast',
 		  qs: 

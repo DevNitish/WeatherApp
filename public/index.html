@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Home page</title>
+	<title>Weather App</title>
 	<!-- Angular Material style sheet -->
 	<link rel="stylesheet" href="/lib/css/angular-material.min.1.1.0.css">
 	<!-- for icons -->
@@ -10,14 +10,19 @@
 	<link data-require="bootstrap@4.0.0-alpha.2" data-semver="4.0.0-alpha.2" rel="stylesheet" href="/lib/css/bootstrap.v4.css"
 	/>
 	<link rel="stylesheet" type="text/css" href="/lib/css/style.css">
-	<link rel="stylesheet" href="lf.css">
 	<script src="/lib/script/jquery1.12.4.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </head>
 
 <body ng-app="weatherApp" ng-controller="weatherAppCtrl">
-	<md-toolbar> Weather App</md-toolbar>
+
+	<md-toolbar > 
+			<div class="row">
+  <div class="col-md-6 offset-md-3">Weather App</div>
+</div>
+</md-toolbar>
+	
 
 	<div class="container">
 		<div class="row">
@@ -30,8 +35,8 @@
 						</md-card-title-text>
 
 					</md-card-title>
-					<md-card-actions layout="row" layout-align="end center">
-						<md-button ng-click="showWeather('Delhi')">Show Forecast</md-button>
+					<md-card-actions  layout="row" layout-align="end center">
+						<md-button class="md-primary" ng-click="showWeather('Delhi')">Show Forecast</md-button>
 					</md-card-actions>
 				</md-card>
 			</div>
@@ -44,8 +49,8 @@
 						</md-card-title-text>
 
 					</md-card-title>
-					<md-card-actions layout="row" layout-align="end center">
-						<md-button ng-click="showWeather('Bengaluru')">Show Forecast</md-button>
+					<md-card-actions  layout="row" layout-align="end center">
+						<md-button class="md-primary" ng-click="showWeather('Bengaluru')">Show Forecast</md-button>
 					</md-card-actions>
 				</md-card>
 			</div>
@@ -58,8 +63,8 @@
 						</md-card-title-text>
 
 					</md-card-title>
-					<md-card-actions layout="row" layout-align="end center">
-						<md-button ng-click="showWeather('Chennai')">Show Forecast</md-button>
+					<md-card-actions  layout="row" layout-align="end center">
+						<md-button class="md-primary" ng-click="showWeather('Chennai')">Show Forecast</md-button>
 					</md-card-actions>
 				</md-card>
 			</div>
@@ -72,13 +77,15 @@
 						</md-card-title-text>
 
 					</md-card-title>
-					<md-card-actions layout="row" layout-align="end center">
-						<md-button ng-click="showWeather('Kolkata')">Show Forecast</md-button>
+					<md-card-actions  layout="row" layout-align="end center">
+						<md-button class="md-primary" ng-click="showWeather('Kolkata')">Show Forecast</md-button>
 					</md-card-actions>
 				</md-card>
 			</div>
 		</div>
+		
 		<myweather weather="weatherDetails"></myweather>
+		
 
 
 	</div>

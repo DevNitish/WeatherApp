@@ -30,7 +30,6 @@ function myWeatherCtrl($scope, $mdDialog, moment) {
   $scope.weather = [];
   $scope.showWeather = function (selectedDate) {
     $scope.weather = [];
-    console.log("selected date: ", selectedDate);
     ctrl.weather.list.filter(function (obj) {
 
       if (selectedDate == obj.dt_txt.substring(0, 10)) {

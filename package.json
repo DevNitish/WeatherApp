@@ -4,7 +4,7 @@
   "description": "weather app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node bin/www"
   },
   "repository": {
@@ -14,9 +14,9 @@
   "author": "nitish",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "request": "^2.78.0"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
   },
   "bugs": {
     "url": "https://github.com/DevNitish/WeatherApp/issues"
