@@ -1,11 +1,11 @@
 # WeatherApp
 This application show 5 days forecast of four major city of India.
 
-####Prerequisit
+#### Prerequisit
 
 * Node v6.2.x
 
-####To run the application
+#### To run the application
 
 * Run `npm install` 
 * Then `npm start`
