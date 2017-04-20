@@ -10,9 +10,10 @@ weatherApp.component('myweather',{
 });
 
 function myWeatherCtrl($scope, $mdDialog,moment) {
+
 	 $scope.status = 'hola';
     var ctrl=this;
-    console.log("yth comp ",this.weather.list);
+    console.log("here====> ",this.weather);
        $scope.tempDate=[];
    $scope.dates=[];
    $scope.tempShowDate=[];
@@ -20,8 +21,8 @@ function myWeatherCtrl($scope, $mdDialog,moment) {
     $scope.mm=new moment();
 
     for (var i = 0; i <5; i++) {
-      $scope.tempShowDate.push(new moment().add(i,'d').format('Y-M-DD'));
-     $scope.showDate.push(new moment().add(i,'d').format('ddd, Do MMM'));
+      $scope.tempShowDate.push(new moment().add(i,'d').format('Y-MM-DD'));
+     $scope.showDate.push(new moment().add(i,'d').format('ddd, DD MM'));
 
     };
     $scope.maxTemp=0;
@@ -29,12 +30,20 @@ function myWeatherCtrl($scope, $mdDialog,moment) {
     $scope.weather=[];
     $scope.showWeather=function(selectedDate){
       $scope.weather=[];
+      console.log("selected date: ",selectedDate);
         ctrl.weather.list.filter(function(obj){
-           console.log("obj", obj.dt_txt.substring(0,10));
-           console.log("selectedDate",selectedDate);
+                console.log("API date: ",obj.dt_txt.substring(0,10));
 
+          // console.log("obj", obj.dt_txt.substring(0,10));
+           //console.log("selectedDate",selectedDate);
+           console.log("hello ===>",selectedDate);
+      
           if(selectedDate==obj.dt_txt.substring(0,10))
-            $scope.weather.push(obj);
+            {
+              console.log("hello 2===>",obj);
+              $scope.weather.push(obj);
+            
+            }
         })
       console.log(" $scope.weather", $scope.weather);
     }
@@ -56,42 +65,7 @@ function myWeatherCtrl($scope, $mdDialog,moment) {
         //       console.log("the 6",$scope.mm);  
         //   })
           
-  console.log("dsad",$scope.showDate);
+  
       
 
-	 // this.showConfirm=function(ev,obj)
-  //   {
-  //        // Appending dialog to document.body to cover sidenav in docs app
-  //   var confirm = $mdDialog.confirm()
-  //         .title('Would you like to delete this news?')
-  //         .textContent('Once it is delete, it cannot be retrieved back!')
-  //         .ariaLabel('Lucky day')
-  //         .targetEvent(ev)
-  //         .ok('Delete it!')
-  //         .cancel('Cancel');
-
-  //   $mdDialog.show(confirm).then(function() {
-  //     $scope.status = 'You decided to delete obj';
-  //     ctrl.removeNews({obj});
-  //     ctrl.news=null;
-  //   }, function() {
-  //   	console.log("keep obj: ",obj);
-
-  //     $scope.status = 'You decided to keep obj';
-  //   });
-      
-  //   console.log("the great THIS userType: ",this.newsid);
-
-  //       //ctrl.addMember(obj)
-  //   }//
-
-  //   $scope.editNewsComp=function(newsid,obj){
-  //     var newObj={ };
-  //     obj.newsid=newsid;
-  //      newObj["obj"]=obj;
-  //     newObj["newsid"]=newsid;
-     
-  //     console.log("edit obj newsid: ",newObj);
-  //     ctrl.editNews({obj1:newObj});
-  //   }
 }
