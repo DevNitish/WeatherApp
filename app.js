@@ -8,8 +8,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/getweather',function(req,res,next){
-   		console.log("Hit Server ",req.body.city);
+router.post('/getweather',function(req,res,next){
 		var options = { method: 'GET',
 		  url: 'http://api.openweathermap.org/data/2.5/forecast',
 		  qs: 
@@ -29,5 +28,5 @@ app.post('/getweather',function(req,res,next){
 		});
    
 });
-module.exports = router;
+app.use('/',router);
 module.exports = app;
